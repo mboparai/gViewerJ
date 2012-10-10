@@ -17,6 +17,7 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import uk.co.caprica.vlcj.binding.LibVlc;
 import uk.co.caprica.vlcj.player.MediaPlayerFactory;
+import uk.co.caprica.vlcj.player.embedded.DefaultFullScreenStrategy;
 import uk.co.caprica.vlcj.player.embedded.EmbeddedMediaPlayer;
 import uk.co.caprica.vlcj.runtime.RuntimeUtil;
 
@@ -47,7 +48,7 @@ public class AudioPlayer extends javax.swing.JFrame {
         this.add(canvas, BorderLayout.CENTER);
     
         factory = new MediaPlayerFactory();
-        mediaPlayer = factory.newEmbeddedMediaPlayer();
+        mediaPlayer = factory.newEmbeddedMediaPlayer(new DefaultFullScreenStrategy(this));
         mediaPlayer.setVideoSurface(factory.newVideoSurface(canvas));
 
         mediaPlayer.setPlaySubItems(true);

@@ -39,7 +39,7 @@ public class VideoPlayer extends javax.swing.JFrame {
         Canvas canvas = new Canvas();
         canvas.setBackground(Color.black);
         this.add(canvas, BorderLayout.CENTER);
-    
+        
         factory = new MediaPlayerFactory();
         mediaPlayer = factory.newEmbeddedMediaPlayer();
         mediaPlayer.setVideoSurface(factory.newVideoSurface(canvas));
